@@ -16,7 +16,8 @@ namespace Day_5_GenericsProblems
             {
                 Console.WriteLine("Please choose program to perform:");
                 Console.WriteLine("1.Find maximum integer value with generic method\n2.Find maximum float value with generic method\n" +
-                    "3.Find maximum string value with generic method\n4.Method extended to take more input.");
+                    "3.Find maximum string value with generic method\n4.Method extended to take more input\n" +
+                    "5.Calling PrintMax method from TestMaximum method");
                 int option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -53,6 +54,42 @@ namespace Day_5_GenericsProblems
                         Console.WriteLine("1.Integer values\n2.Float values\n3.String values");
                         int select = Convert.ToInt32(Console.ReadLine());
                         switch(select)
+                        {
+                            case 1:
+                                // Sample integers
+                                Console.Write("Enter integer values separated by spaces: ");
+                                string intInput = Console.ReadLine();
+                                int[] intValues = Array.ConvertAll(intInput.Split(' '), int.Parse);
+                                FindMaxValue<int> intFinder = new FindMaxValue<int>(intValues);
+                                intFinder.TestMaximum();
+                                break;
+
+                            case 2:
+                                // Sample floats
+                                Console.Write("Enter float values separated by spaces: ");
+                                string floatInput = Console.ReadLine();
+                                float[] floatValues = Array.ConvertAll(floatInput.Split(' '), float.Parse);
+                                FindMaxValue<float> floatFinder = new FindMaxValue<float>(floatValues);
+                                floatFinder.TestMaximum();
+                                break;
+
+                            case 3:
+                                // Sample strings
+                                Console.Write("Enter string values separated by spaces: ");
+                                string stringInput = Console.ReadLine();
+                                string[] stringValues = stringInput.Split(' ');
+                                FindMaxValue<string> stringFinder = new FindMaxValue<string>(stringValues);
+                                stringFinder.TestMaximum();
+                                break;
+
+                        }
+                        break;
+
+                    case 5:
+                        Console.WriteLine("Please select datatypes:");
+                        Console.WriteLine("1.Integer values\n2.Float values\n3.String values");
+                        int choice = Convert.ToInt32(Console.ReadLine());
+                        switch (choice)
                         {
                             case 1:
                                 // Sample integers

@@ -39,10 +39,15 @@ namespace Day_5_GenericsProblems
         public void TestMaximum()
         {
             T max = FindMaximumValue();
+            PrintMax(max);  
+        }
+
+        private void PrintMax(T max)
+        {
             if (!max.Equals(default(T)))
             {
-                Console.WriteLine($"The maximum value is: {max}");
-            }   
+                Console.WriteLine("The maximum vlue is :" + max);
+            }
         }
         
     }
