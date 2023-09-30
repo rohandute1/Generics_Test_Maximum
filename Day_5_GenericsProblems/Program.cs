@@ -15,8 +15,8 @@ namespace Day_5_GenericsProblems
             while(continueExecution)
             {
                 Console.WriteLine("Please choose program to perform:");
-                Console.WriteLine("1.Find maximum integer value\n" +
-                    "2.Find maximum float value");
+                Console.WriteLine("1.Find maximum integer value\n2.Find maximum float value\n" +
+                    "3.Find maximum string value");
                 int option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -35,6 +35,14 @@ namespace Day_5_GenericsProblems
                         float y1 = float.Parse(Console.ReadLine());
                         float z1 = float.Parse(Console.ReadLine());
                         FindMaxValue.FindMaximumValue(x1, y1, z1);
+                        break;
+
+                    case 3:
+                        Console.WriteLine("Please enter 3 string values.");
+                        string x2 = Console.ReadLine();
+                        string y2 = Console.ReadLine();
+                        string z2 = Console.ReadLine();
+                        FindMaxValue.FindMaximumValue(x2, y2, z2);
                         break;
                 }
                 Console.WriteLine("Do you want to continue.(yes/no)");
