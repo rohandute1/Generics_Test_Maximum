@@ -15,10 +15,11 @@ namespace Day_5_GenericsProblems
             while(continueExecution)
             {
                 Console.WriteLine("Please choose program to perform:");
-                Console.WriteLine("1.Find maximum integer");
+                Console.WriteLine("1.Find maximum integer value\n" +
+                    "2.Find maximum float value");
                 int option = Convert.ToInt32(Console.ReadLine());
 
-                switch(option)
+                switch (option)
                 {
                     case 1:
                         Console.WriteLine("Please enter 3 integers.");
@@ -26,6 +27,14 @@ namespace Day_5_GenericsProblems
                         int y = Convert.ToInt32(Console.ReadLine());
                         int z = Convert.ToInt32(Console.ReadLine());
                         FindMaxValue.FindMaximumValue(x, y, z);
+                        break;
+
+                    case 2:
+                        Console.WriteLine("Please enter 3 float values.");
+                        float x1 = float.Parse(Console.ReadLine());
+                        float y1 = float.Parse(Console.ReadLine());
+                        float z1 = float.Parse(Console.ReadLine());
+                        FindMaxValue.FindMaximumValue(x1, y1, z1);
                         break;
                 }
                 Console.WriteLine("Do you want to continue.(yes/no)");

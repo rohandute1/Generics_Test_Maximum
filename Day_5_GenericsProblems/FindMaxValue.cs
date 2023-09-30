@@ -23,5 +23,21 @@ namespace Day_5_GenericsProblems
                 Console.WriteLine($"Maximum integer is:{c}");
             }
         }
+
+        public static void FindMaximumValue(float a, float b, float c)
+        {
+            if (a.CompareTo(b) >= 0 && a.CompareTo(c) >= 0)
+            {
+                Console.WriteLine($"Maximum float value is:{a}");
+            }
+            else if (b.CompareTo(a) >= 0 && b.CompareTo(c) >= 0)
+            {
+                Console.WriteLine($"Maximum float value is:{b}");
+            }
+            else if (c.CompareTo(b) >= 0 && c.CompareTo(a) >= 0)
+            {
+                Console.WriteLine($"Maximum float value is:{c}");
+            }
+        }
     }
 }
