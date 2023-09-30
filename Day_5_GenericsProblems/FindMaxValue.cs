@@ -6,53 +6,21 @@ using System.Threading.Tasks;
 
 namespace Day_5_GenericsProblems
 {
-    class FindMaxValue
+    class FindMaxValue<T> where T : IComparable
     {
-        public static void FindMaximumValue(int a, int b, int c)
+        public static void FindMaximumValue(T a, T b, T c)
         {
             if (a.CompareTo(b) >= 0 && a.CompareTo(c) >= 0)
             {
-                Console.WriteLine($"Maximum integer is:{a}");
+                Console.WriteLine($"Maximum value is:{a}");
             }
             else if (b.CompareTo(a) >= 0 && b.CompareTo(c) >= 0)
             {
-                Console.WriteLine($"Maximum integer is:{b}");
+                Console.WriteLine($"Maximum value is:{b}");
             }
             else if (c.CompareTo(b) >= 0 && c.CompareTo(a) >= 0)
             {
-                Console.WriteLine($"Maximum integer is:{c}");
-            }
-        }
-
-        public static void FindMaximumValue(float a, float b, float c)
-        {
-            if (a.CompareTo(b) >= 0 && a.CompareTo(c) >= 0)
-            {
-                Console.WriteLine($"Maximum float value is:{a}");
-            }
-            else if (b.CompareTo(a) >= 0 && b.CompareTo(c) >= 0)
-            {
-                Console.WriteLine($"Maximum float value is:{b}");
-            }
-            else if (c.CompareTo(b) >= 0 && c.CompareTo(a) >= 0)
-            {
-                Console.WriteLine($"Maximum float value is:{c}");
-            }
-        }
-
-        public static void FindMaximumValue(string a, string b, string c)
-        {
-            if (a.CompareTo(b) >= 0 && a.CompareTo(c) >= 0)
-            {
-                Console.WriteLine($"Maximum string is:{a}");
-            }
-            else if (b.CompareTo(a) >= 0 && b.CompareTo(c) >= 0)
-            {
-                Console.WriteLine($"Maximum string is:{b}");
-            }
-            else if (c.CompareTo(b) >= 0 && c.CompareTo(a) >= 0)
-            {
-                Console.WriteLine($"Maximum string is:{c}");
+                Console.WriteLine($"Maximum value is:{c}");
             }
         }
     }
