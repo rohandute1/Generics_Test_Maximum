@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Day_5_GenericsProblems
 {
-    class FindMaxValue<T> where T : IComparable
+    class FindMaxValue <T> where T : IComparable
     {
         public static void FindMaximumValue(T a, T b, T c)
         {

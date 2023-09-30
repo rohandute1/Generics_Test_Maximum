@@ -15,8 +15,7 @@ namespace Day_5_GenericsProblems
             while(continueExecution)
             {
                 Console.WriteLine("Please choose program to perform:");
-                Console.WriteLine("1.Find maximum integer value with generic method\n" +
-                    "2.Find maximum float value with generic method\n" +
+                Console.WriteLine("1.Find maximum integer value with generic method\n2.Find maximum float value with generic method\n" +
                     "3.Find maximum string value with generic method");
                 int option = Convert.ToInt32(Console.ReadLine());
 
