@@ -3,42 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace Day_5_GenericsProblems
 {
-    class FindMaxValue <T> where T : IComparable
+    class FindMaxValue <T> where T : IComparable<T>
     {
-        public T value1, value2, value3;
+        public T[] values;
         
-        public FindMaxValue(T x, T y, T z) 
+        public FindMaxValue(params T[] values) 
         {
-            value1 = x; 
-            value2 = y; 
-            value3 = z;
+            this.values = values; 
         }
-        public static T FindMaximumValue(T a, T b, T c)
+        public T FindMaximumValue()
         {
-            if (a.CompareTo(b) >= 0 && a.CompareTo(c) >= 0)
+            if (values.Length == 0)
             {
-                return a;
+                Console.WriteLine("No value provided");
+                return default(T);
             }
-            else if (b.CompareTo(a) >= 0 && b.CompareTo(c) >= 0)
+
+            T max = values[0];
+            foreach (T value in values)
             {
-                return b;
+                if (value.CompareTo(max) > 0)
+                {
+                    max = value;
+                }
             }
-            else if (c.CompareTo(b) >= 0 && c.CompareTo(a) >= 0)
-            {
-                return c;
-            }
-            else
-            {
-                return default;
-            }
+
+            return max;
         }
+
         
         public void TestMaximum()
         {
-            Console.WriteLine("Maximum value (Method called from TextMaximum Method) : " + FindMaximumValue(value1, value2, value3));
+            T max = FindMaximumValue();
+            if (!max.Equals(default(T)))
+            {
+                Console.WriteLine($"The maximum value is: {max}");
+            }   
         }
+        
     }
 }
