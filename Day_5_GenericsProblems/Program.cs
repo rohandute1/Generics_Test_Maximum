@@ -26,7 +26,8 @@ namespace Day_5_GenericsProblems
                         int x = Convert.ToInt32(Console.ReadLine());
                         int y = Convert.ToInt32(Console.ReadLine());
                         int z = Convert.ToInt32(Console.ReadLine());
-                        FindMaxValue<int>.FindMaximumValue( x, y, z);
+                        FindMaxValue<int> findMaxValue = new FindMaxValue<int>(x, y, z);
+                        findMaxValue.TestMaximum();
                         break;
 
                     case 2:
@@ -34,7 +35,8 @@ namespace Day_5_GenericsProblems
                         float x1 = float.Parse(Console.ReadLine());
                         float y1 = float.Parse(Console.ReadLine());
                         float z1 = float.Parse(Console.ReadLine());
-                        FindMaxValue<float>.FindMaximumValue(x1, y1, z1);
+                        FindMaxValue<float> findMaxFloat = new FindMaxValue<float>(x1, y1, z1);
+                        findMaxFloat.TestMaximum();
                         break;
 
                     case 3:
@@ -42,8 +44,10 @@ namespace Day_5_GenericsProblems
                         string x2 = Console.ReadLine();
                         string y2 = Console.ReadLine();
                         string z2 = Console.ReadLine();
-                        FindMaxValue<string>.FindMaximumValue(x2, y2, z2);
+                        FindMaxValue<string> findMaxString = new FindMaxValue<string>(x2, y2, z2);
+                        findMaxString.TestMaximum();
                         break;
+
                 }
                 Console.WriteLine("Do you want to continue.(yes/no)");
                 string userInput = Console.ReadLine();  
